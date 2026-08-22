@@ -133,7 +133,8 @@
           if (!t0) t0 = ts;
           var p = Math.min((ts - t0) / dur, 1);
           var eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = (target * eased).toFixed(dec) + (p === 1 ? suffix : '');
+          /* اللاحقة تظل ظاهرة طوال الحركة: بدونها يقرأ الزائر "696" بلا معنى */
+          el.textContent = (target * eased).toFixed(dec) + suffix;
           if (p < 1) requestAnimationFrame(tick);
         }
         requestAnimationFrame(tick);
