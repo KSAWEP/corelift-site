@@ -663,6 +663,37 @@ table.spec tbody tr:hover td{color:var(--blue-d)}
   .logowall--clients{grid-template-columns:repeat(4,1fr)}
   .footer__top{grid-template-columns:1fr 1fr}
 }
+/* ---- مقاسات موحّدة لكل الجوالات ----
+   كانت العناوين تتبع عرض الشاشة فوق 580px، فيقفز العنوان من 34.4px
+   إلى 40.6px عند تجاوز الحد بواحد، ويستمر بالتضخم. الآن مقاس واحد
+   لكل جهاز محمول، رأسياً كان أو أفقياً. */
+@media (max-width:900px){
+  :root{
+    --pad:22px;
+    --fs-hero:2.15rem;
+    --fs-h1:1.95rem;
+    --fs-h2:1.6rem;
+    --fs-h3:1.12rem;
+  }
+  body{font-size:16px;line-height:1.8}
+  .hero h1{line-height:1.26}
+  .hero p{font-size:1rem}
+  .hero-strip b,.stat b{font-size:2rem}
+  .statement h2{font-size:1.6rem}
+  .cta h2{font-size:1.9rem}
+  .hero__in{min-height:auto;padding-block:118px 44px}
+  .pagehead__in{padding-block:104px 40px}
+  .section{padding-block:52px}
+  .section--tight{padding-block:40px}
+}
+
+/* الجوال بالوضع الأفقي: الارتفاع هو المورد الشحيح لا العرض */
+@media (max-width:900px) and (max-height:540px){
+  .hero__in{padding-block:92px 34px}
+  .pagehead__in{padding-block:86px 30px}
+  .section{padding-block:44px}
+}
+
 @media (max-width:880px){
   html{scroll-padding-top:80px}
   .grid--3,.grid--2{grid-template-columns:1fr}
@@ -678,28 +709,11 @@ table.spec tbody tr:hover td{color:var(--blue-d)}
 }
 @media (max-width:580px){
   /* ---- إيقاع رأسي أقصر: الصفحة كانت 19 شاشة تمرير ---- */
-  /* مقاسات ثابتة لا تتبع عرض الشاشة: الجوال الكبير كان يعرض
-     العنوان بـ38.7px والصغير بـ33.75px، فيختلف الترتيب بينهما */
-  :root{
-    --pad:22px;
-    --fs-hero:2.15rem;
-    --fs-h1:1.95rem;
-    --fs-h2:1.6rem;
-    --fs-h3:1.12rem;
-  }
-  body{font-size:16px;line-height:1.8}
-  .section{padding-block:52px}
-  .section--tight{padding-block:40px}
   .sec-head{margin-bottom:30px;padding-top:1.2rem}
   .eyebrow{margin-bottom:1rem}
-
-  /* الواجهة: كانت 763px مع 146px حشو علوي فارغ */
-  .hero__in{min-height:auto;padding-block:118px 44px}
-  .hero h1{line-height:1.26}
-  .hero p{margin-bottom:1.8rem;font-size:1rem}
+  .hero p{margin-bottom:1.8rem}
   .hero__actions{width:100%}
   .hero__actions .btn{width:100%;justify-content:center}
-  .pagehead__in{padding-block:104px 40px}
   .pagehead p{font-size:.98rem}
 
   .grid--4,.steps{grid-template-columns:1fr}
