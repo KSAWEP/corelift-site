@@ -131,18 +131,13 @@ h4{font-family:"Thmanyah Sans",sans-serif;font-weight:600}
 .brand{display:flex;align-items:center;gap:.8rem;flex:none}
 .brand img{height:44px;width:auto;transition:filter .45s var(--ease)}
 .header:not(.is-stuck) .brand img{filter:brightness(0) invert(1)}
-/* السطر الضيّق كان يجعل حروف الاسم العربي تتداخل مع السطر اللاتيني تحته */
-.brand__txt{display:flex;flex-direction:column;justify-content:center;gap:2px}
+/* الشعار نفسه يحمل CORELIFT / ELEVATOR SOLUTIONS، فلا يتكرر نصاً بجانبه */
+.brand__txt{display:flex;flex-direction:column;justify-content:center}
 .brand__name{
-  font-family:"Thmanyah Display",serif;font-weight:600;font-size:1.12rem;
-  line-height:1.45;color:var(--ink);transition:color .45s var(--ease);
-}
-.brand__sub{
-  font-size:.58rem;line-height:1.2;color:var(--muted);
-  letter-spacing:.16em;transition:color .45s;
+  font-family:"Thmanyah Display",serif;font-weight:600;font-size:1.2rem;
+  line-height:1.4;color:var(--ink);transition:color .45s var(--ease);
 }
 .header:not(.is-stuck) .brand__name{color:var(--paper)}
-.header:not(.is-stuck) .brand__sub{color:rgba(244,242,237,.6)}
 
 .nav{margin-inline-start:auto;display:flex;align-items:center;gap:0;height:100%}
 .nav__item{position:relative;height:100%;display:flex;align-items:center}
@@ -683,10 +678,14 @@ table.spec tbody tr:hover td{color:var(--blue-d)}
 }
 @media (max-width:580px){
   /* ---- إيقاع رأسي أقصر: الصفحة كانت 19 شاشة تمرير ---- */
+  /* مقاسات ثابتة لا تتبع عرض الشاشة: الجوال الكبير كان يعرض
+     العنوان بـ38.7px والصغير بـ33.75px، فيختلف الترتيب بينهما */
   :root{
-    --fs-hero:clamp(2.1rem,9vw,2.6rem);
-    --fs-h1:clamp(1.85rem,7.6vw,2.3rem);
-    --fs-h2:clamp(1.5rem,6.2vw,1.9rem);
+    --pad:22px;
+    --fs-hero:2.15rem;
+    --fs-h1:1.95rem;
+    --fs-h2:1.6rem;
+    --fs-h3:1.12rem;
   }
   body{font-size:16px;line-height:1.8}
   .section{padding-block:52px}
