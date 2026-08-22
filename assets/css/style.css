@@ -128,8 +128,9 @@ h4{font-family:"Thmanyah Sans",sans-serif;font-weight:600}
 .header__in{display:flex;align-items:center;gap:2rem;height:88px;transition:height .45s var(--ease)}
 .header.is-stuck .header__in{height:72px}
 
-.brand{display:flex;align-items:center;gap:.8rem;flex:none}
-.brand img{height:44px;width:auto;transition:filter .45s var(--ease)}
+.brand{display:flex;align-items:center;gap:.7rem;flex:none}
+/* الأيقونة وحدها: الشعار الكامل يحمل الاسم بالإنجليزي فيتكرر مع "كور ليفت" */
+.brand img{height:38px;width:auto;transition:filter .45s var(--ease)}
 .header:not(.is-stuck) .brand img{filter:brightness(0) invert(1)}
 /* الشعار نفسه يحمل CORELIFT / ELEVATOR SOLUTIONS، فلا يتكرر نصاً بجانبه */
 .brand__txt{display:flex;flex-direction:column;justify-content:center}
@@ -206,7 +207,7 @@ h4{font-family:"Thmanyah Sans",sans-serif;font-weight:600}
 }
 .drawer.is-open .drawer__panel{transform:translateX(0)}
 .drawer__head{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.2rem;border-bottom:1px solid var(--rule);margin-bottom:.4rem}
-.drawer__head img{height:40px}
+.drawer__head img{height:36px}
 .drawer nav a{
   display:block;padding:.95rem .3rem;border-bottom:1px solid var(--rule);
   font-family:"Thmanyah Display",serif;font-size:1.12rem;color:var(--ink);
