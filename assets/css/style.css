@@ -490,21 +490,23 @@ h4{font-family:"Thmanyah Sans",sans-serif;font-weight:600}
 .marquee:hover .marquee__track{animation-play-state:paused}
 .marquee img{height:46px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.46;transition:.4s}
 .marquee img:hover{filter:none;opacity:1}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* في الاتجاه من اليمين لليسار تقع النسخة المكررة على يسار الأصل،
+   فالدفع لازم يكون لليمين وإلا خرجت الشعارات ولم يدخل خلفها شيء */
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(50%)}}
 
-/* جدار العملاء: صفّان متعاكسان بدل شبكة ساكنة من 27 خانة */
-.marquee--wall{padding-block:2.4rem}
-.marquee--wall + .marquee--wall{border-top:0}
-.marquee--wall .marquee__track{gap:5rem;animation-duration:64s}
-.marquee--wall img{height:54px;opacity:.5}
-.marquee--rev .marquee__track{animation-direction:reverse}
+/* جدار العملاء: سطر واحد يضم السبعة والعشرين شعاراً */
+.marquee--wall{padding-block:2.6rem}
+.marquee--wall .marquee__track{gap:5rem;animation-duration:80s}
+.marquee--wall img{height:58px;opacity:.52}
 @media (max-width:900px){
-  .marquee--wall{padding-block:1.7rem}
-  .marquee--wall .marquee__track{gap:3rem;animation-duration:46s}
-  .marquee--wall img{height:42px}
+  /* العام قبل الخاص: تساويا في الأولوية فيغلب الأخير */
+  .marquee img{height:52px}
+  .marquee--wall{padding-block:2rem}
+  .marquee--wall .marquee__track{gap:3.2rem;animation-duration:56s}
+  .marquee--wall img{height:64px;opacity:.6}
 }
 @media (prefers-reduced-motion:reduce){
-  .marquee__track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}
+  .marquee__track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;gap:2.5rem}
 }
 
 /* ============ أكورديون ============ */
