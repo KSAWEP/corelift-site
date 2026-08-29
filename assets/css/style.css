@@ -492,6 +492,21 @@ h4{font-family:"Thmanyah Sans",sans-serif;font-weight:600}
 .marquee img:hover{filter:none;opacity:1}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
+/* جدار العملاء: صفّان متعاكسان بدل شبكة ساكنة من 27 خانة */
+.marquee--wall{padding-block:2.4rem}
+.marquee--wall + .marquee--wall{border-top:0}
+.marquee--wall .marquee__track{gap:5rem;animation-duration:64s}
+.marquee--wall img{height:54px;opacity:.5}
+.marquee--rev .marquee__track{animation-direction:reverse}
+@media (max-width:900px){
+  .marquee--wall{padding-block:1.7rem}
+  .marquee--wall .marquee__track{gap:3rem;animation-duration:46s}
+  .marquee--wall img{height:42px}
+}
+@media (prefers-reduced-motion:reduce){
+  .marquee__track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}
+}
+
 /* ============ أكورديون ============ */
 .acc{border-top:1px solid var(--rule)}
 .acc__item{border-bottom:1px solid var(--rule)}
